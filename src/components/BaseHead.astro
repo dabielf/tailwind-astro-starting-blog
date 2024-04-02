@@ -2,7 +2,7 @@
 import "@/styles/global.css";
 import { SITE_METADATA } from "@/consts";
 import { ViewTransitions } from "astro:transitions";
-import "@fontsource/onest";
+import '@fontsource-variable/montserrat';
 import { SEO } from "astro-seo";
 import { getEntry, type CollectionEntry } from "astro:content";
 import Favicon from "@/assets/favicon.svg";
@@ -138,5 +138,5 @@ const isProduction = import.meta.env.PROD;
     }}
   />
   {isProduction && <Analytics />}
-  <ViewTransitions />
+  <ViewTransitions fallback="swap"/>
 </head>

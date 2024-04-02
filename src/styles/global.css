@@ -1,26 +1,77 @@
 .task-list-item::before {
-    @apply hidden;
+  @apply hidden;
 }
 
 .task-list-item {
-    @apply list-none;
+  @apply list-none;
 }
 
 .footnotes {
-    @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
 }
 
 .data-footnote-backref {
-    @apply no-underline;
+  @apply no-underline;
 }
 
 .csl-entry {
-    @apply my-5;
+  @apply my-5;
 }
 
 /* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
-    transition: background-color 600000s 0s,
-    color 600000s 0s;
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+body {
+  font-family: "Montserrat Variable", sans-serif;
+}
+
+.hover-text-title {
+  transition: color 0.25s, font-weight 0.25s;
+  @apply font-[600];
+}
+
+.hover-text-title:hover {
+  @apply drop-shadow-md font-[900];
+}
+
+.hover-text-title:hover + .hover-text-title {
+  @apply drop-shadow font-[800];
+}
+
+.hover-text-title:hover + .hover-text-title + .hover-text-title {
+  @apply drop-shadow-sm font-[700];
+}
+
+.hover-text-title:has(+ .hover-text-title:hover) {
+  font-weight: 800;
+  @apply drop-shadow;
+}
+
+.hover-text-title:has(+ .hover-text-title + .hover-text-title:hover) {
+  font-weight: 700;
+  @apply drop-shadow-sm;
+}
+
+.prose p {
+  transition: font-weight 0.25s, background-color 0.25s, color 0.25s;
+  font-weight: 500;
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+.prose p strong {
+  transition: background-color 0.25s, color 0.25s, font-weight 0.25s;
+  @apply drop-shadow-xl dark:text-gray-200;
+}
+
+.prose p:hover {
+  /* font-weight: 400; */
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.prose p:hover strong {
+  font-weight: 800;
+  @apply text-black dark:text-white;
 }

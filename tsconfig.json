@@ -2,12 +2,16 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "strictNullChecks": true,
-    "baseUrl": ".",
+    "baseUrl": "/Users/optimaliste/Documents/Code/Astro-Projects/astro-fd-blog",
     "paths": {
-      "@/*": ["src/*"],
-      "@/solid/*": ["src/components/solidjs/*"],
+      "@/*": [
+        "src/*"
+      ],
+      "@/solid/*": [
+        "src/components/solidjs/*"
+      ]
     },
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

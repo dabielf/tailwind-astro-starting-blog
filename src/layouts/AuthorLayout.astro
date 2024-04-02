@@ -9,6 +9,8 @@ import { sortBlogPosts } from "../functions";
 import { ITEMS_PER_PAGE } from "../consts";
 import { useTranslations } from "@/i18n";
 
+import avatarImage from "@/assets/avatar.png";
+
 const t = useTranslations();
 
 interface Props {
@@ -43,6 +45,8 @@ const authorPosts = await getCollection(
   });
 ---
 
+
+
 <RootLayout title={name} description={shortBio}>
   <div class="divide-y divide-gray-200 dark:divide-gray-700">
     <div class="space-y-2 pb-8 pt-6 md:space-y-5">
@@ -59,7 +63,7 @@ const authorPosts = await getCollection(
         {
           avatar && (
             <Image
-              src={avatar}
+              src={avatarImage}
               alt="avatar"
               width={192}
               height={192}
@@ -83,7 +87,7 @@ const authorPosts = await getCollection(
         <div class="prose pb-8 pt-8 dark:prose-invert">
           <slot />
         </div>
-        {
+        <!-- {
           authorPosts.length > 0 && (
             <div class="pt-8">
               <h2 class="text-2xl font-bold leading-8 tracking-tight">
@@ -98,7 +102,7 @@ const authorPosts = await getCollection(
               </ul>
             </div>
           )
-        }
+        } -->
       </div>
     </div>
   </div>
